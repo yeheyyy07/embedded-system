@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+/* Japanese Font */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nanum+Gothic:wght@400;700&family=Noto+Serif+JP:wght@200;300;900&display=swap');
+:root { /*custom property - use to input variables to call it easily*/
+    --overlay-color: rgba(22, 5, 5, 0.808);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Architects Daughter', cursive;
+}
+html {
+    scroll-behavior: smooth;
+}
+.showcase {
+    position: absolute;
+    right: 0%;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--overlay-color);
+    color: white;
+    z-index: 2; /*position of header*/
+    transition: 1s linear;
+}
+.showcase .logo3 img{
+    transform: scale(.3);
+    position: absolute;
+    display: flex;
+    top: -15rem;
+    left: -14rem;
+    bottom: rem;
+    filter: opacity(.9);
+}
+.showcase.active {
+    right: 200px; /*size of panel*/
+    transition: 1s;
+    
+}
+.showcase header {
+    text-decoration: solid;
+    font-size: 300%;
+    position: absolute;
+    top: -.7in;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px; /*40px - top&bottom ; 100px - left and right*/
+    z-index: 1000;
+    display: flex; /*position in a horizontal form*/
+    align-items: center; /*vertical*/
+    justify-content: space-between; /*push it regarding in the size of the window*/
+}
+.logo {
+    outline: 0ch;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: .5em;
+    margin-left: -62rem;
+}
+.showcase .logo a {
+    text-decoration: none !important; /*overrides all input*/
+    color:white
+}
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 150px;
+    background: url('menu_icon.png');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    cursor: pointer;
+    filter: invert(1);
+    transform: scale(1.5);
+    transition: .8s;
+}
+.toggle.active {/*putting a space - looking for the elements inside the class toggle, whereas no space looks for the class toggle.active*/
+    background: url('menu_icon2.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    transition: .8s;
+    margin-right: -1in;
+}
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 5, 5, 0.363); /*a - alpha, sets transparency*/
+    mix-blend-mode: overlay;
+}
+.text {
+    margin-left: 2in;
+    position: relative;
+    z-index: 10; /*put text on top of the video*/
+}
+.text h2{
+    font-size: 5em; /*multiplier of size*/
+    line-height: 1em;
+    text-transform: uppercase;
+}
+.text h3{
+    font-size: 1.5em;
+    font-family:'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    margin-top: 4.5rem;
+}
+.text h4 {
+    font-size: 1em;
+    color: rgba(194, 18, 18, 0.801);
+}
+.text h4.a {
+    text-decoration: none !important; /*overrides all input*/
+}
+.text p{
+    font-size: 1.6em;
+    margin: 5px;
+    font-weight: 40;
+    /* max-width: 700px; controls the position of text */
+}
+.text a {
+    display: inline-block;
+    font-size: 1em;
+    background-color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #111;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: 0.2s; /*smoother transition of the interactive text box*/
+}
+.text a:hover{
+    letter-spacing: 20px;
+
+}
+.social {
+    position: absolute;
+    bottom: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    left: 620px;
+    
+}
+.social img {
+    left: 120px;
+    transform: scale(2); /*adjust the size of the image*/
+}
+.social li {
+    list-style: none;
+
+}
+.social li a {
+    display: inline-block;
+    filter: invert(1);
+    margin-right: 20px; /*space between each button*/
+    transform: scale(0.5); /*1 - default*/
+    transition: 0.5s;
+}
+.social li a:hover {
+    transform: scale (0.5) translateY(-15px); /*moves in Y- axis, (+) moves down ; (-) moves up*/
+}
+section {
+    padding: 1rem 0;
+}
+img {
+    max-width: 100%;
+}
+.split{
+    display: flex;
+}
+.text-center{
+    text-align: center;
+}
+.container {
+    margin-inline: auto;
+}
+.extra{
+    margin-bottom: 7%;
+    background-color: #000;
+}
+.home{
+    background-color: #664229;
+    color: white;
+    font-size: 1.5em;
+    padding: 5em;
+
+}
+.home p{
+    left: 20%;
+    align-items: center;
+    justify-content: center;
+ 
+}
+.home img{
+    transform: scale(1);
+    margin-left: 190px;
+}
+.about {
+    background-color: #E5D3B3;
+    font-size: 1.5em;
+    padding: 5em;
+}
+.about p{
+    font-size: 1em;
+}
+.about img{
+    margin-left:190px;
+    transform: scale(1);
+}
+.coffee-menu{
+    background-color: rgba(75, 11, 11, 0.589);
+}
+.coffee-menu img{
+    transform: scale(.7);
+}
+.gallery {
+    background-color: #B99976;
+}
+.gallery img{
+    transform: scale(.7);
+}
+.contact {
+    background-color: #D2B48C;
+    
+}
+.contact img{
+    transform: scale(.7);
+
+}
+.menu {
+    background:url('THEME2.jpg');
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: 1s;
+}
+.menu img{
+    bottom: 200px;
+    position: fixed;
+    transform: scale(.35);
+
+}
+.menu ul { /*elements inside the sliding option*/
+    position: relative;
+    font-size: 1.8em;
+    list-style: none;
+    margin-top: 1.5in;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: rgb(252, 247, 247);
+}
+.menu ul li a:hover {
+    color:  rgba(17, 3, 3, 0.884);
+    border-bottom: .3rem solid var(--overlay-color);
+    padding-bottom: .5rem 2px;
+}
+.container1{
+    position: relative;
+    display: grid;
+    grid-auto-rows: 100% 100%;
+    grid-gap: 10ox;
+}
+body{
+    background: #987554;
+}
+.gallery{
+    width: 100%;
+    height: 100%;
+    position:relative;
+    align-items: center;
+}
+.gallery .image{
+    position: center;
+    /* column-width: */
+}
+.gallery .image img{
+    width: 50%;
+    height: 100%;
+    object-fit:cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    transition: 1s ease-out;
+}
+
+.gallery .image:hover img{
+    transform: scale(.5);
+    transition: 1s;
+}
+.gallery .info{
+    opacity: 0;
+    position: center;
+    top: -50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    font-size: 25px;
+    z-index: 4;
+    transition: .5 ease-in-out;
+    --webkit-backdrop-filter: blur(5px) saturate (2);
+    backdrop-filter: blur (5px) saturate (2);
+}
+.gallery .info:hover{
+    opacity: 1;
+    padding: 1em;
+    width: 99%;
+    transition: 1s;
+}
+.coffee-menu{
+    display: grid;
+    flex-wrap: wrap;
+    padding: 4em;
+    grid-template-columns: repeat(1, 2fr);;
+}
+
+.coffee-menu img{
+    flex: 50%;
+    padding: 0 4px;
+}
+.coffee-menu p{
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+}
+.coffee-menu h1{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 4em;
+    text-decoration: underline;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.contact{
+    background: url('DESSERT.jpg');
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: 95% 0%;
+    color: white;
+    text-transform: uppercase;
+    padding: 4em;
+    transition: all 4s ease-in-out;
+}
+.contact h1{
+    right: 100%;
+    font-size: 4em;
+    line-height: 1em;
+    width: 50%;
+}
+.contact h2 {
+    font: 1em;
+
+}
+.contact img{
+    align-items: left;
+    justify-content: left;
+}
+
+form{
+    margin-top: 50px;
+    transition: all 4s ease-in-out;
+}
+.form-control{
+    width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #855829;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+input{
+    height: 45px;
+}
+form .submit{
+    background:#855829;
+    border-top: transparent;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20px;
+    border-bottom: none;
+}
+form .submit:hover{
+    background-color:#664229;
+    cursor: pointer;
+}
+@media (max-width: 780px){ /*under this pixel, this effects will be applied*/
+    .showcase, 
+    .showcase header { 
+        padding: 40px;
+    }
+    .text h2 {
+        font-size: 3em;
+    }
+    .text h3 {
+        font-size: 2em;
+    }
+}
